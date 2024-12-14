@@ -20,9 +20,9 @@ Zenn CLI（Command Line Interface）は、ZennとGitHubリポジトリを連携�
 
 ## ZennとGiuHubリポジトリの連携
 
-あらかじめ、下記リンクの手順で、Zennのコンテンツを編集する用のディレクトリにGitのローカルリポジトリを作成し、GitHubにpushしておきます。
+あらかじめ、下記リンクの手順で、Zennのコンテンツを編集する用のディレクトリにGitのローカルリポジトリを作成し、GitHubにPushしておきます。
 
-https://zenn.dev/zenn/articles/connect-to-github
+https://zenn.dev/ats030/articles/link-zenn-to-github
 
 ## Node.jsの設定
 
