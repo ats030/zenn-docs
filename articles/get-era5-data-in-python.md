@@ -1,11 +1,11 @@
 ---
-title: "PythonでERA5のデータを取得する"
+title: "PythonでERA5のデータを取得するための設定"
 emoji: "🌤️"
 type: "tech"
 topics:
   - "python"
-published: false
-published_at: "2024-12-14 00:00"
+published: true
+published_at: "2024-12-15 01:00"
 ---
 
 # CDS APIの設定
