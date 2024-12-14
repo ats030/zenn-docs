@@ -1,11 +1,10 @@
 ---
-title: 買い切りプランでクラウドストレージpCloudを導入する
-emoji: ☁
-type: tech
+title: "買い切りプランでクラウドストレージpCloudを導入する"
+emoji: "☁"
+type: "tech"
 topics:
-  - pcloud
+  - "pcloud"
 published: false
-published_at: 2025-01-01 00:00
 ---
 
 # はじめに
