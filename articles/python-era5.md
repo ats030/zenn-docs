@@ -2,7 +2,8 @@
 title: "PythonでERA5のデータを取得する"
 emoji: "🌤️"
 type: "tech"
-topics: ["Python"]
+topics:
+  - "python"
 published: false
 ---
 

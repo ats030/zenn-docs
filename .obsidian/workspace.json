@@ -11,14 +11,10 @@
             "id": "998aef610050b5aa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/xxxxxxxx-pcloud.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "xxxxxxxx-pcloud"
+              "title": "新規タブ"
             }
           }
         ]
@@ -164,12 +160,17 @@
   },
   "active": "998aef610050b5aa",
   "lastOpenFiles": [
-    "articles/20241208-delete-ssh-windows.md",
     "articles/delete-ssh-windows.md",
+    "articles/install-docker-linux.md",
+    "articles/install-curl-linux.md",
+    "articles/20241209-install-tailscale-linux.md",
+    "articles/install-tailscale-linux.md",
+    "articles/python-era5.md",
+    "articles/xxxxxxxx-pcloud.md",
+    "articles/pcloud.md",
+    "articles/20241208-delete-ssh-windows.md",
     "articles/20241214-python-era5.md",
     "articles/xxxxxxxx-pcloud copy.md",
-    "articles/20241209-install-tailscale-linux.md",
-    "articles/xxxxxxxx-pcloud.md",
     "xxxxxxxx-pcloud.md",
     "articles/20241209-install-curl-linux.md",
     "articles/20241208-install-docker-linux.md",
@@ -185,10 +186,6 @@
     "articles/20241204.md",
     "articles/e7c67ab1f6e4a5 - コピー.md",
     "articles/20241213-python-era5.md",
-    "articles/xxxxxxxx-template.md",
-    "無題のファイル.md",
-    "README.md",
-    "zenn-docs-public",
-    "Welcome.md"
+    "zenn-docs-public"
   ]
 }
