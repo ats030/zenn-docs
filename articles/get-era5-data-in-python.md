@@ -5,6 +5,7 @@ type: "tech"
 topics:
   - "python"
 published: false
+published_at: "2024-12-14 00:00"
 ---
 
 # CDS APIの設定

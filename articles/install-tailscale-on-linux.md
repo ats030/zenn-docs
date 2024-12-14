@@ -20,7 +20,7 @@ Tailscaleは、簡単に使えるVPN（仮想プライベートネットワー�
 
 curlコマンドが使用できない場合、以下の記事を参考にインストールします。
 
-https://zenn.dev/ats030/articles/719b462067397b
+https://zenn.dev/ats030/articles/install-curl-on-linux
 
 # Tailscaleのインストール
 

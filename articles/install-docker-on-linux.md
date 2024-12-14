@@ -14,7 +14,7 @@ published_at: "2024-12-08 14:54"
 
 curlコマンドが使用できない場合、以下の記事を参考にインストールします。
 
-https://zenn.dev/ats030/articles/719b462067397b
+https://zenn.dev/ats030/articles/install-curl-on-linux
 
 # Dockerのインストール
 
