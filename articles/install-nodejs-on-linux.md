@@ -1,6 +1,6 @@
 ---
 title: "Linux環境でNode.jsをインストールする"
-emoji: "🔗"
+emoji: "🧰"
 type: "tech"
 topics:
   - "nodejs"

@@ -1,6 +1,6 @@
 ---
 title: "Linux環境でnvmコマンドを使用できるようにする"
-emoji: "🔗"
+emoji: "🛠️"
 type: "tech"
 topics:mi
   - "nvm"

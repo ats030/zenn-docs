@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu PCにFlatpakをインストールする"
-emoji: "🌐"
+emoji: "🪣"
 type: "tech"
 topics:
   - "flatpak"
