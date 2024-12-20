@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "524075045475e81b",
+    "id": "57ba9686296769e1",
     "type": "split",
     "children": [
       {
-        "id": "a955e8d013862af2",
+        "id": "ceaf05024c280c09",
         "type": "tabs",
         "children": [
           {
-            "id": "998aef610050b5aa",
+            "id": "b76cd1739d8a8066",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/delete-ssh-history-in-windows.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "delete-ssh-history-in-windows"
+              "title": "新規タブ"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "2dd5a519b601943e",
+    "id": "afc3eaf43d9ffc99",
     "type": "split",
     "children": [
       {
-        "id": "9a8714f447aba0a1",
+        "id": "09d61fa1d26784db",
         "type": "tabs",
         "children": [
           {
-            "id": "2bdb5758aed51256",
+            "id": "fd0de358897b54ad",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -47,7 +43,7 @@
             }
           },
           {
-            "id": "e24dcda57993a761",
+            "id": "cb8a7fa49ab9b97d",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -64,7 +60,7 @@
             }
           },
           {
-            "id": "1ea205c918609bb3",
+            "id": "3880fe5c2a836c2e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -80,20 +76,19 @@
     "width": 300
   },
   "right": {
-    "id": "132bfe3bfd327f1a",
+    "id": "8cca2d4a0ecc20ce",
     "type": "split",
     "children": [
       {
-        "id": "14ab5650f85c2859",
+        "id": "1d151233b809b062",
         "type": "tabs",
         "children": [
           {
-            "id": "6353e45e9a525b0f",
+            "id": "6d7f90daedabde11",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,25 +98,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Welcomeへのバックリンク"
+              "title": "バックリンク"
             }
           },
           {
-            "id": "6c391cecf54ab998",
+            "id": "3a8dafc1538e924f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Welcomeからのアウトゴーイングリンク"
+              "title": "アウトゴーイングリンク"
             }
           },
           {
-            "id": "7ce4883e812a58d0",
+            "id": "c154c1cecf37f054",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -134,15 +128,13 @@
             }
           },
           {
-            "id": "f4c6c5b63c26243a",
+            "id": "f6c2521431544869",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Welcome.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Welcomeのアウトライン"
+              "title": "アウトライン"
             }
           }
         ]
@@ -162,35 +154,6 @@
       "command-palette:コマンドパレットを開く": false
     }
   },
-  "active": "998aef610050b5aa",
-  "lastOpenFiles": [
-    "articles/get-era5-data-in-python.md",
-    "articles/how-to-use-zenn-cli.md",
-    "articles/install-curl-on-linux.md",
-    "articles/install-docker-on-linux.md",
-    "articles/install-tailscale-on-linux.md",
-    "articles/link-zenn-to-github.md",
-    "articles/delete-ssh-history-in-windows.md",
-    "articles/linki-zenn-to-github.md",
-    "articles/get-era5-data-in-python-era5.md",
-    "articles/installing-docker-on-linux.md",
-    "articles/installing-curl-on-linux.md",
-    "articles/installing-tailscale-on-linux.md",
-    "articles/linking-zenn-and-github.md",
-    "articles/use-zenn-cli.md",
-    "articles/link-zenn-and-github.md",
-    "articles/20241214-zenn-cli.md",
-    "articles/20241214-use-zenn-cli.md",
-    "articles/20241214-link-zenn-and-github.md",
-    "articles/20241214-zenn-github.md",
-    "articles/20241214-zenn-cli copy.md",
-    "articles/20141214-install-nodejs.md",
-    "articles/20141214-.md",
-    "articles/20141214-zenn-github copy.md",
-    "articles/20141214-python-era5.md",
-    "articles/20141214-python-era5md",
-    "articles/20141214-zenn-github.md",
-    "articles/20141214-python-era5 copy.md",
-    "zenn-docs-public"
-  ]
+  "active": "b76cd1739d8a8066",
+  "lastOpenFiles": []
 }
