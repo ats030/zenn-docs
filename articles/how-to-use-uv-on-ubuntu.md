@@ -38,11 +38,13 @@ uvは、Rustで開発された高速なPythonパッケージおよびプロジ�
 
 # uvをインストールする
 
-Ubuntuの「アプリセンター」から「uv (by Astral)」をインストールするのが簡単です。
+以下のコマンドでuvをインストールします。
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
+uvが正常にインストールされている場合、以下のコマンドでバージョン名が表示されます。
 
 ```bash
 uv --version
