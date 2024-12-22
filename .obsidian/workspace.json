@@ -11,10 +11,14 @@
             "id": "b76cd1739d8a8066",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "articles/how-to-use-uv-on-ubuntu.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新規タブ"
+              "title": "how-to-use-uv-on-ubuntu"
             }
           }
         ]
