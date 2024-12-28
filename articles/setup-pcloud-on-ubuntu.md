@@ -1,5 +1,5 @@
 ---
-title: Ubuntu環境でpCloudを設定する
+title: Ubuntu環境でpCloudのマウントを自動化する
 emoji: ☁️
 type: tech
 topics:
