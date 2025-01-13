@@ -17,14 +17,14 @@ OpenMediaVault（OMV）は、Debianを基盤とした無料のNAS（ネットワ
 
 # システム構成
 
-今回、OpenMediaVaultをインストールのは以下の構成のRaspberry Piです。
+今回、OpenMediaVaultをインストールしたのは以下の構成のRaspberry Piです。
 
 - ハードウェア
   - Raspberry Pi 4 Model B / 4GB
 - OS
   - Raspberry Pi OS Lite (64-bit)
 - インターネット接続
-  - 有線LAN
+  - 有線LAN（CAT6A LANケーブル）
 - 外部ストレージ
   - 外付けSSD
 

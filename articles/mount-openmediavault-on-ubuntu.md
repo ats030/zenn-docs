@@ -5,6 +5,7 @@ type: "tech"
 topics:
   - "openmediavault"
   - "nas"
+  - "rclone"
   - "ubuntu"
   - "raspberrypi"
 published: true
