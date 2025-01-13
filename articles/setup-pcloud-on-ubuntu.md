@@ -203,7 +203,7 @@ sudo ln -s /usr/bin/rclone /sbin/mount.rclone
 シンボリックリンクが貼れたら、```mount```コマンドでマウントしてみます。
 
 ```bash
-mount pcloud: ~/pCloudDrive/ -t rclone -o cache-dir="~/.local/var/rclone/",vfs-cache-mode=full
+mount pcloud: ~/pCloudDrive/ -t rclone -o cache-dir="/home/<ユーザー名>/.local/var/rclone/",vfs-cache-mode=full
 ```
 
 以上の様に、```rclone mount```コマンドは、``` mount```コマンドで置き換える事ができるようになりました。 つまり、システムは、```mount```コマンドを使って、 他のファイルシステムと同様にpCloudをマウント出来るようになったということです。
@@ -216,7 +216,7 @@ Ubuntu起動時に```mount```コマンドが実行されてpCloudがマウント
 
 https://systemd.io/
 
-systemdは、Linuxシステムの起動と管理を担う現代的なソフトウェアです。従来のinitシステムに代わり、高速な起動や柔軟なプロセス管理を実現し、多くの主要Linuxディストリビューションで採用されています。systemdは「ユニット」と呼ばれる単位でサービスを管理し、設定ファイルを通じて統一的なシステム管理を可能にします。
+systemdは、Linuxシステムの起動と管理を担うソフトウェアです。従来のinitシステムに代わり、高速な起動や柔軟なプロセス管理を実現し、多くの主要Linuxディストリビューションで採用されています。systemdは「ユニット」と呼ばれる単位でサービスを管理し、設定ファイルを通じて統一的なシステム管理を可能にします。
 
 ## systemdのユニットファイル
 
