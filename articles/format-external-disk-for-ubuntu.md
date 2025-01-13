@@ -5,7 +5,7 @@ type: "tech"
 topics:
   - "ubuntu"
 published: true
-published_at: "2025-01-14 6:50"
+published_at: "2025-01-14 06:50"
 ---
 
 # 「ディスク」アプリ

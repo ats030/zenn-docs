@@ -8,7 +8,7 @@ topics:
   - "ubuntu"
   - "raspberrypi"
 published: true
-published_at: "2025-01-14 7:00"
+published_at: "2025-01-14 07:00"
 ---
 
 # サーバーの設定
