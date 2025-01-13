@@ -23,10 +23,11 @@ OpenMediaVault（OMV）は、Debianを基盤とした無料のNAS（ネットワ
   - Raspberry Pi 4 Model B / 4GB
 - OS
   - Raspberry Pi OS Lite (64-bit)
+- 外部ストレージ
+  - OS起動用→外付けSSD（240GB）
+  - NASストレージ用→外付けSSD（2TB）
 - インターネット接続
   - 有線LAN（CAT6A LANケーブル）
-- 外部ストレージ
-  - 外付けSSD
 
 # Raspberry Piの設定
 
