@@ -9,6 +9,12 @@ published: true
 published_at: "2025-01-14 06:55"
 ---
 
+# OpenMediaVaultとは
+
+https://www.openmediavault.org/
+
+OpenMediaVault（OMV）は、Debianを基盤とした無料のNAS（ネットワーク接続ストレージ）システムです。主にCIFS（Samba）、FTP、NFSなどのプロトコルに対応し、ソフトウェアRAID機能を提供しています。ユーザーはWebブラウザを介して簡単に管理できるため、家庭や小規模オフィスでのデータ共有に適しています。
+
 # システム構成
 
 今回、OpenMediaVaultをインストールのは以下の構成のRaspberry Piです。

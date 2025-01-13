@@ -17,31 +17,13 @@ published_at: "2025-01-14 07:00"
 
 https://zenn.dev/ats030/articles/install-openmediavault-on-raspberrypi-os
 
-# OpenMediaVaultサーバーの設定
-
-## OpenMediaVaultとは
-
-https://www.openmediavault.org/
-
-OpenMediaVault（OMV）は、Debianを基盤とした無料のNAS（ネットワーク接続ストレージ）システムです。主にCIFS（Samba）、FTP、NFSなどのプロトコルに対応し、ソフトウェアRAID機能を提供しています。ユーザーはWebブラウザを介して簡単に管理できるため、家庭や小規模オフィスでのデータ共有に適しています。
-
 # Rcloneによるマウント設定
 
 OpenMediaVaultのマウントをCLIで実行するにはRcloneを使用するのが良さそうです。
 
-## Rcloneとは
-
-https://rclone.org/
-
-Rcloneは、多様なクラウドストレージサービス間でファイルを管理・同期するためのオープンソースのコマンドラインツールです。pCloud以外にも、Google DriveやDropboxなど40以上のクラウドストレージに対応し、ファイルのアップロード、ダウンロード、同期が簡単に行えます。高速で効率的なファイル転送が可能で、大容量データの移行にも適しています。
-
 ## Rcloneのインストール
 
-以下のコマンドでRcloneをインストールします。
-
-```bash
-sudo apt install rclone
-```
+https://zenn.dev/ats030/articles/install-rclone-on-ubuntu
 
 ## RcloneにOpenMediaVaultを登録する
 
