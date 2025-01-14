@@ -125,6 +125,10 @@ n) No
 y/n>
 ```
 
+---
+
+***ブラウザが使用できる場合***
+
 ```y```と入力するか、空欄のまま```Enter```を入力します。
 
 ブラウザが立ち上がって、ログイン画面が表示されます。
@@ -141,6 +145,57 @@ y/e/d>
 ```
 
 ```y```と入力するか、空欄のまま```Enter```を入力します。
+
+***ブラウザが使用できない場合***
+
+SSH接続などでブラウザが使用できない場合、```n```と入力します。
+
+```bash
+Option config_token.
+For this to work, you will need rclone available on a machine that has
+a web browser available.
+For more help and alternate methods see: https://rclone.org/remote_setup/
+Execute the following on the machine with the web browser (same rclone
+version recommended):
+	rclone authorize "pcloud"
+Then paste the result.
+Enter a value.
+config_token>
+```
+
+ブラウザが使用できる他のPCで、以下のコマンドを入力します。
+
+```bash
+rclone authorize "pcloud"
+```
+
+ブラウザが立ち上がって、ログイン画面が表示されます。
+
+正しくログインが行われると、コンソール上で以下のように表示されます。
+
+```bash
+...
+Paste the following into your remote machine --->
+{"access_token":"<アクセストークン>","token_type":"bearer","expiry":"0001-01-01T00:00:00Z"}
+<---End paste
+```
+
+元のPCのコンソールで、```config_token> ```の後ろに```<アクセストークン>```を入力します。
+
+```bash
+Configuration complete.
+Options:
+- type: pcloud
+Keep this "pcloud" remote?
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d> 
+```
+
+```y```と入力するか、空欄のまま```Enter```を入力します。
+
+---
 
 ```bash
 Current remotes:
