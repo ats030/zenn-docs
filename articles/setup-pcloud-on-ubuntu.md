@@ -176,11 +176,11 @@ rclone authorize "pcloud"
 ```bash
 ...
 Paste the following into your remote machine --->
-{"access_token":"<アクセストークン>","token_type":"bearer","expiry":"0001-01-01T00:00:00Z"}
+<SECRET_TOKEN>
 <---End paste
 ```
 
-元のPCのコンソールで、```config_token> ```の後ろに```<アクセストークン>```を入力します。
+元のPCのコンソールで、```config_token> ```の後ろに```<SECRET_TOKEN>```の部分を入力します。
 
 ```bash
 Configuration complete.
