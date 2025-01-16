@@ -17,7 +17,7 @@ crontabは、Unix系オペレーティングシステムで定期的にジョブ
 
 # Raspberry Piの設定
 
-以下の手順で、aspberry PiにOpenMediaVaultをインストールしておきます。
+以下の手順で、Raspberry PiにOpenMediaVaultをインストールしておきます。
 
 https://zenn.dev/ats030/articles/install-openmediavault-on-raspberrypi-os
 
