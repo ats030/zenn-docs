@@ -25,13 +25,13 @@ https://zenn.dev/ats030/articles/install-openmediavault-on-raspberrypi-os
 
 ## 環境変数HOMEを確認する
 
-Raspberry Pi上で以下のコマンドを実行して、ホームディレクトリの環境変数``HOME```が定義されていることを確認しておきます。
+Raspberry Pi上で以下のコマンドを実行して、ホームディレクトリの環境変数```HOME```が定義されていることを確認しておきます。
 
 ```bash
 echo $HOME
 ```
 
-今回のようにOpenMediaVaultをマウントしたRaspberry Piの場合、以下のように表示されることを確認します。
+今回のようにOpenMediaVaultをマウントしたRaspberry Piの場合、以下のように表示されます。
 
 ```bash
 /srv/dev-disk-by-uuid-<UUID>/nas/<ユーザー名>
@@ -39,7 +39,7 @@ echo $HOME
 
 これがOpenMediaVaultをインストールしたRaspberry Piのホームディレクトリの絶対パスになります。
 
-環境変数``HOME```は、crontabの設定やシェルスクリプトの作成時に使用します。
+環境変数```HOME```は、crontabの設定やシェルスクリプトの作成時に使用します。
 
 ## crontabの設定ファイルへの記入方法
 
@@ -58,7 +58,7 @@ crontabファイルの末尾に、スペース区切りで以下のフィール�
 
 ## シェルスクリプトの設定例
 
-今回は、pCloudのホームディレクトリのバックアップを取得するため、以下の内容で定期実行するシェルスクリプト```backup.sh```を作成しました。
+今回は、pCloudのホームディレクトリのバックアップを取得するため、定期実行するシェルスクリプト```$HOME/cron/backup.sh```を以下の内容で作成しました。
 
 ```bash
 #!/bin/bash
@@ -110,7 +110,7 @@ find "$BACKUP_DEST" -name "backup_pcloud_*.tgz" -type f -mtime +3 -delete
 fusermount -u "$MOUNT_POINT"
 ```
 
-pCloudのホームディレクトリを、OpenMediaVaultをマウントしたRaspberry Piの```$HOME/Backup/```に.tgzファイルで保存して、最新の3回分だけ残して古い.tgzファイルは削除する設定です。
+pCloudのホームディレクトリを、OpenMediaVaultをマウントしたRaspberry Piの```$HOME/Backup/```に.tgzファイルで保存して、最新の3回分だけ残して古い.tgzファイルは削除するようにしました。
 
 ## crontabの設定例
 
