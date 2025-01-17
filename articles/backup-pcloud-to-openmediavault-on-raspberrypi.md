@@ -125,7 +125,7 @@ crontabの設定ファイルが開くので、例えば以下のような記述�
 ```Plane text
 # pCloudを$HOME/Backupにバックアップする
 # （毎週月曜の2:00に$HOME/cron/backup.shを実行する）
-0 2 * * 1 $HOME/cron/backup.sh
+0 2 * * 1 sh $HOME/cron/backup.sh
 ```
 
 crontabの設定ファイルに編集内容を保存して終了すると、スケジュール設定が反映されます。
