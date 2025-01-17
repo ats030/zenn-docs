@@ -110,7 +110,7 @@ find "$BACKUP_DEST" -name "backup_pcloud_*.tgz" -type f -mtime +3 -delete
 fusermount -u "$MOUNT_POINT"
 ```
 
-pCloudのホームディレクトリを、OpenMediaVaultをマウントしたRaspberry Piの```$HOME/Backup/```に.tgzファイルで保存して、最新の3回分だけ残して古い.tgzファイルは削除するようにしました。
+pCloudのホームディレクトリを、OpenMediaVaultをマウントしたRaspberry Piの```$HOME/Backup/```に.tgzファイルで保存して、最新の3回分だけ残して古いファイルは削除するようにしました。
 
 ## crontabの設定例
 
