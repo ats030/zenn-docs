@@ -58,56 +58,58 @@ crontabファイルの末尾に、スペース区切りで以下のフィール�
 
 ## シェルスクリプトの設定例
 
-今回は、pCloudのホームディレクトリのバックアップを取得するため、定期実行するシェルスクリプト```$HOME/cron/backup.sh```を以下の内容で作成しました。
+今回は、pCloudのホームディレクトリのバックアップを取得するため、定期実行するシェルスクリプトを作成します。
+
+```bash
+sudo nano $HOME/cron/bachup.sh
+```
+
+以下のような内容でシェルスクリプトを作成します。
 
 ```bash
 #!/bin/bash
 
-# マウントポイントの確認と既存マウントの解除
+set -e  # エラー時に即座に終了
+
 MOUNT_POINT="$HOME/pCloudDrive"
-if mountpoint -q "$MOUNT_POINT"; then
-    echo "既存のマウントを解除します..."
-    fusermount -u "$MOUNT_POINT"
-fi
-
-# ディレクトリが存在しない場合は作成
-if [ ! -d "$MOUNT_POINT" ]; then
-    mkdir -p "$MOUNT_POINT"
-fi
-
-# pCloudをマウント
-rclone mount pcloud: "$MOUNT_POINT" --daemon --cache-dir $HOME/.local/var/rclone --vfs-cache-mode full
-
-# マウントの確認（少し待機）
-sleep 5
-if ! mountpoint -q "$MOUNT_POINT"; then
-    echo "pCloudのマウントに失敗しました。終了します。"
-    exit 1
-fi
-
-# バックアップ対象のディレクトリ
-BACKUP_SOURCE="$MOUNT_POINT"
-
-# バックアップ先のディレクトリ
-BACKUP_DEST="$HOME/Backup"
-
-# バックアップファイル名（日本時間で日付を含む）
+BACKUP_DEST="$HOME/Backup/pCloud"
 DATE=$(TZ='Asia/Tokyo' date '+%Y%m%d-%H%M%S')
 BACKUP_FILE="backup_pcloud_$DATE.tgz"
 
-# バックアップの実行
-if tar -czf "$BACKUP_DEST/$BACKUP_FILE" -C "$BACKUP_SOURCE" .; then
-    echo "バックアップが正常に完了しました: $BACKUP_DEST/$BACKUP_FILE"
-else
-    echo "バックアップ中にエラーが発生しました。"
-    exit 1
-fi
+# 必要な関数
+check_command() {
+    command -v "$1" >/dev/null 2>&1 || { echo >&2 "$1が見つかりません。インストールしてください。"; exit 1; }
+}
 
-# 古いバックアップファイルの削除（3回以上前のファイル）
-find "$BACKUP_DEST" -name "backup_pcloud_*.tgz" -type f -mtime +3 -delete
+# 必要なコマンドの確認
+check_command rclone
+check_command tar
+
+# マウントポイントの準備
+mountpoint -q "$MOUNT_POINT" && fusermount -u "$MOUNT_POINT"
+mkdir -p "$MOUNT_POINT"
+
+# pCloudのマウント
+rclone mount pcloud: "$MOUNT_POINT" --daemon --vfs-cache-mode full
+
+# マウントの確認
+for i in {1..30}
+    mountpoint -q "$MOUNT_POINT" && break
+    sleep 1
+    [ $i -eq 30 ] && { echo "pCloudのマウントに失敗しました。"; exit 1; }
+done
+
+# バックアップの実行
+mkdir -p "$BACKUP_DEST"
+tar -czf "$BACKUP_DEST/$BACKUP_FILE" -C "$MOUNT_POINT" .
+
+# 4週間以前の古いバックアップの削除
+find "$BACKUP_DEST" -name "backup_pcloud_*.tgz" -type f -mtime +28 -delete
 
 # pCloudのアンマウント
 fusermount -u "$MOUNT_POINT"
+
+echo "バックアップが完了しました: $BACKUP_DEST/$BACKUP_FILE"
 ```
 
 pCloudのホームディレクトリを、OpenMediaVaultをマウントしたRaspberry Piの```$HOME/Backup/```に.tgzファイルで保存して、最新の3回分だけ残して古いファイルは削除するようにしました。
