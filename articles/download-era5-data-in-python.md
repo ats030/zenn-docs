@@ -30,7 +30,9 @@ https://zenn.dev/ats030/articles/get-era5-data-in-python
 
 ## ダウンロード条件の設定
 
-```configure.py```の内容を以下のようにします。
+気象データのダウンロード条件を設定します。
+
+例えば、```configure.py```の内容を以下のようにします。
 
 ```python
 from datetime import date, datetime, timedelta
@@ -40,8 +42,10 @@ def configure():
     # 設定値
     ################################################################################
     # データ抽出期間
-    dt1 = datetime(2024, 1, 1, 0, 0, 0)
-    dt2 = datetime(2024, 12, 31, 0, 0, 0)
+    dt1 = datetime(1940, 1, 1, 0, 0, 0)
+    dt2 = datetime.now()
+    #dt1 = datetime(2024, 1, 1, 0, 0, 0)
+    #dt2 = datetime(2024, 12, 31, 0, 0, 0)
 
     # 圧力レベル
     lev = 1000
@@ -70,13 +74,11 @@ import netCDF4
 import xarray as xr
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import csv
 import os
 from datetime import date, datetime, timedelta
 from geopy.geocoders import Nominatim
 from tqdm import tqdm
 import time
-import numpy as np
 
 import certifi
 import ssl
@@ -98,7 +100,7 @@ class ERA5():
         
         # データ取得開始日時
         if len(filelist) == 0:
-            start = 'ERA5_'+str(format(dt1.year, '04'))+'-'+str(format(dt1.month, '02'))+'-'+str(format(dt1.day, '02'))+'T'+str(format(dt1.hour, '02'))+'_00_00_'+str(shortname)+'.csv'
+            start = 'ERA5_'+str(format(dt1.year, '04'))+'-'+str(format(dt1.month, '02'))+'-'+str(format(dt1.day, '02'))+'T'+str(format(dt1.hour, '02'))+'_00_00_'+str(shortname)+'.nc'
         else:
             start = max(filelist)
         str_d1 = str(start[5:9])+str(start[10:12])+str(start[13:15])+str(start[16:18])
@@ -115,10 +117,10 @@ class ERA5():
         dt2 = datetime(int(str_d2[:4]), int(str_d2[4:6]), int(str_d2[6:8]), int(str_d2[8:]), 0, 0)
 
     def correct_dt_single(shortname, dt1, dt2, dir):
-        if not os.path.exists(str(dir)+'/csv_'+str(shortname)):
-            os.makedirs(str(dir)+'/csv_'+str(shortname))
+        if not os.path.exists(str(dir)+'/nc_'+str(shortname)):
+            os.makedirs(str(dir)+'/nc_'+str(shortname))
             
-        path = str(dir)+'/csv_'+str(shortname)
+        path = str(dir)+'/nc_'+str(shortname)
         files = os.listdir(path)
 
         ERA5.correct_dt(shortname, dt1, dt2, path, files)
@@ -126,28 +128,15 @@ class ERA5():
         return (dt1, dt2, dir)
 
     def correct_dt_pressure(shortname, lev, dt1, dt2, dir):
-        if not os.path.exists(str(dir)+'/csv_'+str(shortname)+'_'+str(int(float(lev)))):
-            os.makedirs(str(dir)+'/csv_'+str(shortname)+'_'+str(int(float(lev))))
+        if not os.path.exists(str(dir)+'/nc_'+str(shortname)):
+            os.makedirs(str(dir)+'/nc_'+str(shortname))
             
-        path = str(dir)+'/csv_'+str(shortname)+'_'+str(int(float(lev)))
+        path = str(dir)+'/nc_'+str(shortname)
         files = os.listdir(path)
 
         ERA5.correct_dt(shortname, dt1, dt2, path, files)
 
         return (dt1, dt2, dir)
-
-    ################################################################################
-    # CSVファイルを生成する関数
-    ################################################################################
-    def gen_csv_single(shortname, t, dir, matrix):
-        with open(str(dir)+'/csv_'+str(shortname)+'/ERA5_'+str(t[:10])+'T'+str(t[11:13])+'_00_00_'+str(shortname)+'.csv', mode='w', encoding='utf-8', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerows(matrix)
-
-    def gen_csv_pressure(shortname, t, lev, dir, matrix):
-        with open(str(dir)+'/csv_'+str(shortname)+'_'+str(int(float(lev)))+'/ERA5_'+str(t[:10])+'T'+str(t[11:13])+'_00_00_'+str(shortname)+'_'+str(int(float(lev)))+'.csv', mode='w', encoding='utf-8', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerows(matrix)
 
     ################################################################################
     # 「ERA5 hourly data on single levels from 1940 to present」からデータを抽出する関数
