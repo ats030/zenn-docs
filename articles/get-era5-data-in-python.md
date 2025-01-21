@@ -62,3 +62,9 @@ https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=ove
 https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels?tab=overview
 
 それぞれのページから、「Download」タブ→「Terms of use」（利用規約）を「Accepted」（受け入れ）しておきます。
+
+# データを取得する
+
+## データをダウンロードするPythonスクリプト
+
+https://zenn.dev/ats030/articles/download-era5-data-in-python
