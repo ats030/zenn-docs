@@ -66,17 +66,18 @@ minkowski() {
 
 ### 2.2 BOSL2を使った部分フィレット
 
-外部ライブラリ **BOSL2**（[GitHubリンク](https://github.com/revarbat/BOSL2)）を利用すると、
+外部ライブラリ **BOSL2**（[GitHubリンク](https://github.com/revarbat/BOSL2)）の`cuboid()`関数で、
 特定の方向やエッジのみを丸める制御が可能になります。
 
 ```scad
 // BOSL2を利用した部分フィレット
 include <BOSL2/std.scad>;
 
-cube_fillet(
-    size = [30, 20, 10],
-    fillet = 1.5,
-    edges = ["+X", "-Y"]  // X+方向とY−方向の角のみ
+// X+方向、Y-方向のみにフィレット (半径1.5)
+cuboid(
+  [30, 20, 10],
+  rounding = 1.5,
+  edges = [RIGHT, BACK]
 );
 ```
 
@@ -90,16 +91,17 @@ cube_fillet(
 
 ## 3. OpenSCADでの面取り実装
 
-BOSL2には`cube_chamfer()`関数があり、簡単に面取りを追加できます。
+BOSL2の`cuboid()`関数で、簡単に面取りを追加できます。
 
 ```scad
 // BOSL2で面取りを実装
 include <BOSL2/std.scad>;
 
-cube_chamfer(
+// サイズ30x20x10の直方体のY方向のエッジに1.5の面取りを適用
+cuboid(
     size = [30, 20, 10],
     chamfer = 1.5,
-    edges = "Y"
+    edges = [BACK]
 );
 ```
 
@@ -137,10 +139,16 @@ cube_chamfer(
 | `difference()`・`union()` | 必要最小限に  | ネスト構造を避けて演算コスト削減 |
 
 ```scad
-// 最適化を意識した設定例
+include <BOSL2/std.scad>;
+
 $fn = 24; // プレビュー軽量化
-render(convexity = 10)
-cube_fillet(size = [40, 40, 10], fillet = 2, edges = "Z");
+render(convexity = 10);
+
+cuboid(
+    size = [40, 40, 10],
+    rounding = 2,
+    edges = [TOP]
+);
 ```
 
 ---
