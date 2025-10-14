@@ -6,7 +6,7 @@ topics:
   - "openscad"
   - "ubuntu"
 published: true
-published_at: "2025-10-13 23:40"
+published_at: "2025-10-14 00:00"
 ---
 
 # UbuntuにOpenSCADをインストールする
